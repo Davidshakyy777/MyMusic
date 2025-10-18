@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #111, #333);
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  padding: 10px 20px;
+}
+
+header h1 {
+  font-size: 1.5em;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+#installBtn {
+  background: #ff4081;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+main {
+  margin-top: 40px;
+}
+
+.player {
+  background: #444;
+  padding: 20px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  cursor: pointer;
+  background: #666;
+  border: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+footer {
+  margin-top: 40px;
+  padding: 10px;
+  background: #222;
+}
