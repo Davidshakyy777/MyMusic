@@ -1,41 +1,30 @@
-const tracks = [
+const audioList = [
   { src: 'assets/audio/track1.mp3', title: 'Трек 1' },
   { src: 'assets/audio/track2.mp3', title: 'Трек 2' }
 ];
 
-let currentTrack = 0;
-const audioPlayer = document.getElementById('audioPlayer');
-const trackTitle = document.getElementById('trackTitle');
+let index = 0;
+const player = document.getElementById('player');
 
-function loadTrack(index) {
-  const track = tracks[index];
-  if (!track) return;
-  audioPlayer.src = track.src;
-  trackTitle.textContent = track.title;
-}
-loadTrack(currentTrack);
-
-document.getElementById('prevBtn').addEventListener('click', () => {
-  currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
-  loadTrack(currentTrack);
-  audioPlayer.play();
-});
-
-document.getElementById('nextBtn').addEventListener('click', () => {
-  currentTrack = (currentTrack + 1) % tracks.length;
-  loadTrack(currentTrack);
-  audioPlayer.play();
-});
-
-document.getElementById('playBtn').addEventListener('click', () => {
-  if (audioPlayer.paused) {
-    audioPlayer.play();
-  } else {
-    audioPlayer.pause();
+function loadTrack(i) {
+  if (player) {
+    player.src = audioList[i].src;
+    player.play().catch(()=>{});
   }
+}
+loadTrack(index);
+
+document.getElementById('prev').addEventListener('click', () => {
+  index = (index - 1 + audioList.length) % audioList.length;
+  loadTrack(index);
 });
 
-// --- INSTALL APP ---
+document.getElementById('next').addEventListener('click', () => {
+  index = (index + 1) % audioList.length;
+  loadTrack(index);
+});
+
+// Install app
 let deferredPrompt;
 const installBtn = document.getElementById('installBtn');
 
@@ -46,16 +35,18 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 installBtn.addEventListener('click', async () => {
-  deferredPrompt.prompt();
-  const result = await deferredPrompt.userChoice;
-  console.log('Install choice:', result.outcome);
-  deferredPrompt = null;
   installBtn.hidden = true;
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') console.log('App installed');
+    deferredPrompt = null;
+  }
 });
 
-// --- SERVICE WORKER ---
+// Register Service Worker
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js')
-    .then(() => console.log('✅ Service Worker Registered'))
-    .catch(err => console.error('❌ SW failed:', err));
+    .then(() => console.log('✅ Service Worker registered'))
+    .catch(console.error);
 }

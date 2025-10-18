@@ -1,36 +1,27 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MyMusic</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="icons/icon-192.png" type="image/png">
 </head>
 <body>
   <header>
-    <img src="icons/icon-96.png" alt="logo" class="logo">
-    <h1>MyMusic</h1>
+    <h1>🎵 MyMusic</h1>
   </header>
 
   <main>
-    <div class="player">
-      <h2 id="trackTitle">Трек 1</h2>
-      <audio id="audioPlayer" controls></audio>
-      <div class="controls">
-        <button id="prevBtn">⏮️</button>
-        <button id="playBtn">▶️</button>
-        <button id="nextBtn">⏭️</button>
-      </div>
+    <audio id="player" controls></audio>
+    <div class="controls">
+      <button id="prev">⏮ Back</button>
+      <button id="next">⏭ Next</button>
     </div>
-
-    <button id="installBtn">📲 Install App</button>
   </main>
 
-  <footer>
-    <p>© 2025 MyMusic</p>
-  </footer>
+  <button id="installBtn" hidden>📲 Install App</button>
 
   <script src="app.js"></script>
 </body>

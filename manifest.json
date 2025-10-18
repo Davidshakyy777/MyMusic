@@ -3,11 +3,23 @@
   "short_name": "MyMusic",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#111",
-  "theme_color": "#1db954",
+  "background_color": "#000000",
+  "theme_color": "#1DB954",
   "icons": [
-    { "src": "icons/icon-96.png", "sizes": "96x96", "type": "image/png" },
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+    {
+      "src": "icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ]
 }
