@@ -1,11 +1,16 @@
 {
   "name": "MyMusic",
   "short_name": "Music",
-  "start_url": ".",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#111111",
-  "theme_color": "#ff4081",
+  "background_color": "#0f172a",
+  "theme_color": "#1e293b",
   "icons": [
+    {
+      "src": "icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
     {
       "src": "icons/icon-192.png",
       "sizes": "192x192",
