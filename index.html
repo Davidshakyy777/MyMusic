@@ -4,33 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MyMusic</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="icons/icon-96.png" sizes="96x96" type="image/png">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
 </head>
 <body>
-
   <header>
-    <img src="icons/icon-192.png" alt="logo" class="logo">
+    <img src="icons/icon-96.png" alt="logo" class="logo">
     <h1>MyMusic</h1>
-    <button id="installBtn">Install</button>
   </header>
 
   <main>
-    <h2>🎵 Play Your Music</h2>
     <div class="player">
+      <h2 id="trackTitle">Трек 1</h2>
       <audio id="audioPlayer" controls></audio>
-        <div class="controls">
-        <button id="prev">⏮️</button>
-        <span id="title">Трек жоқ</span>
-        <button id="next">⏭️</button>
+      <div class="controls">
+        <button id="prevBtn">⏮️</button>
+        <button id="playBtn">▶️</button>
+        <button id="nextBtn">⏭️</button>
       </div>
     </div>
+
+    <button id="installBtn" hidden>📲 Install App</button>
   </main>
 
   <footer>
-    <p>© 2025 MyMusic App</p>
+    <p>© 2025 MyMusic</p>
   </footer>
 
   <script src="app.js"></script>
